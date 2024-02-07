@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Percentage</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="main-div">
+        <div id="container">
+            <h1 id="head"></h1>
+            <span id="battery"></span>
+        </div>
+    </div>
+    <script>
+        const Batteryper = () => {
+            document.getElementById('head').innerText = 'Your Battery Percentage 0%'
+            setTimeout(() => {
+
+                const battery = document.getElementById('battery')
+                battery.innerHTML = `<i class="fa fa-battery-empty"></i>`
+                battery.style.color = "#ff0000";
+            }, 0);
+            setTimeout(() => {
+                document.getElementById('head').innerText = 'Your Battery Percentage 25%'
+                const battery = document.getElementById('battery')
+                battery.innerHTML = `<i class="fa fa-battery-quarter" aria-hidden="true"></i>`
+                battery.style.color = "#ff0000";
+            }, 1000);
+            setTimeout(() => {
+                document.getElementById('head').innerText = 'Your Battery Percentage 50%'
+                const battery = document.getElementById('battery')
+                battery.innerHTML = `<i class="fa fa-battery-half" aria-hidden="true"></i>`
+                battery.style.color = "#ffa500";
+            }, 2000);
+            setTimeout(() => {
+                document.getElementById('head').innerText = 'Your Battery Percentage 75%'
+                const battery = document.getElementById('battery')
+                battery.innerHTML = `<i class="fa fa-battery-three-quarters" aria-hidden="true"></i>`
+                battery.style.color = "#00ff00";
+
+
+            }, 3000);
+            setTimeout(() => {
+                document.getElementById('head').innerText = 'Your Battery Percentage 100%'
+                const battery = document.getElementById('battery')
+                battery.innerHTML = `<i class="fa fa-battery-full" aria-hidden="true"></i>`
+                battery.style.color = "#008000";
+
+
+            }, 4000);
+
+        }
+        setInterval(() => { Batteryper() }, 5000)
+
+        Batteryper();
+
+    </script>
+
+</body>
+
+</html>
